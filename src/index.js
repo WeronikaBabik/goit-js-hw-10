@@ -42,7 +42,7 @@ function allAboutCountry(data) {
   const languages = Object.values(data[0].languages).join(',');
   return data
     .map(({ capital, flags, name, population }) => {
-      return `<div><img src="${flags.svg}" alt="${name.official}" width ="150"/><p><b>${name.official}</b></p></div>
+      return `<div><img src="${flags.svg}" alt="${name.official}" width ="200"/><p class="one-country">${name.official}</p></div>
                 <p><b>Capital:</b> ${capital}</p>
                 <p><b>Population:</b> ${population}</p>
                 <p><b>Languages:</b> ${languages}</p>`;
@@ -53,7 +53,7 @@ function allAboutCountry(data) {
 function listOfAllCountries(data) {
   return data
     .map(({ flags, name }) => {
-      return `<li><img src="${flags.svg}" alt="Flag of ${name.official}" width="40"><p>${name.official}</p></li>`;
+      return `<li class="country-list__item"><img src="${flags.svg}" alt="Flag of ${name.official}" width="100"><p class="country-list__text">${name.official}</p></li>`;
     })
     .join('');
 }
